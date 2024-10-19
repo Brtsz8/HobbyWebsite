@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Encode Sans Condensed', "Arial Narrow", Arial, sans-serif;
+    background-color:beige;
+}
+
+
+
+h1{
+   
+    margin: 0px;
+    color:#191919;
+    font-weight: 800 ;
+    text-align: right;
+    padding-top: 77px;
+    padding-left: 15%;
+    padding-right: 15px;
+    font-size: 4em;
+}
+
+h3 {
+    color:#D20A0A;
+    margin: 0;
+}
+
+p{
+    color:#191919;
+}
+
+
+main{
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+.box_top{
+    /*border: 1px solid black;*/
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    background-color: #D20A0A;
+    top: 1px;
+    position: sticky;
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 5;
+}
+
+.menu_option{
+    width: 150px;
+    height: 30px;
+    border:1px solid orange;
+    display: flex;
+    padding: 1px;
+    justify-content: center;
+    font-weight: 600;
+    font-size: large;
+    
+}
+
+
+
+.main_top{
+    /*border: 2px solid black;*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /*background-color: yellowgreen;*/
+    position: relative;
+    flex-wrap: wrap ;
+}
+
+
+
+.content{
+
+    /*border: 2px solid red;*/
+    
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+   
+}
+
+
+
+#newpost{
+    margin: 10px;
+    display: flex;
+    padding: 1.5%;
+   /* border: 2px solid black;*/
+    border-radius: 50px;
+    box-shadow: 0 0 10px;
+    flex-wrap: wrap;
+    /*min-width: 700px;*/
+    max-width: 1400px;
+
+}
+
+#img1{
+    
+    border-radius: 50px;
+}
+
+#post_right{
+    margin-left: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    max-width: 300px;
+  
+}
+
+h3::before{
+    content: ' ';
+    border: 1px solid #D20A0A;
+    
+    height: 1px;
+    border-radius: 150px;
+
+    margin-right: 5px;
+}
+
+aside{
+
+    display:flex;
+    flex-direction: column;
+    
+    width: 400px; 
+    border: 2px solid red;
+}
+
+footer{
+
+    background-color: #191919;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 50px;
+}
+
+#firstImgContainer{
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-right: 13%;
+}
+
+#firstImg{
+
+    border-radius: 50px;
+}
+
+
