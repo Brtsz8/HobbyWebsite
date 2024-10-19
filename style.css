@@ -2,7 +2,8 @@
 
 body{
     font-family: 'Encode Sans Condensed', "Arial Narrow", Arial, sans-serif;
-    background-color:beige;
+    background-color:aliceblue;
+    margin: 0;
 }
 
 
@@ -152,8 +153,11 @@ footer{
 }
 
 #firstImg{
-
     border-radius: 50px;
+}
+
+#secondImg{
+    display: none;
 }
 
 @media screen and (max-width: 1055px) {
@@ -189,6 +193,27 @@ footer{
         font-size: 4em;
         padding-left: 15%;
         padding-right: 15%;
+    }
+
+  }
+@media screen and (max-width: 749px) {
+    #newpost{
+        justify-content: center;
+    }
+
+  }
+  @media screen and (max-width: 649px) {
+    #firstImg{
+        display: none;
+    }
+    
+    #secondImg{
+        display: block;
+    }
+
+    #newpost{
+        
+        margin:8px;
     }
 
   }
