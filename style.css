@@ -63,6 +63,9 @@ footer{
 abbr{
     text-decoration: none;
 }
+table{
+    width: 300px;
+}
 .box_top{
     /*border: 1px solid black;*/
     border-radius: 13px;
@@ -160,7 +163,7 @@ abbr{
     justify-content: center;
     padding: 1.5%;
     border-radius: 50px;
-    box-shadow: 0 0 10px;
+    box-shadow: 0 0 15px gray;
     flex-wrap: wrap;
     max-width: 1400px;
     animation:goUp linear;
