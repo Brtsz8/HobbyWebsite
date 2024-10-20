@@ -14,7 +14,7 @@ h1{
     margin: 0px;
     color:#191919;
     font-weight: 800 ;
-    text-align: right;
+    text-align: center;
     padding-top: 77px;
     padding-left: 15%;
     padding-right: 15px;
@@ -63,7 +63,6 @@ footer{
 abbr{
     text-decoration: none;
 }
-
 .box_top{
     /*border: 1px solid black;*/
     border-radius: 13px;
@@ -77,62 +76,98 @@ abbr{
     z-index: 5;
 }
 
-.menu_option{
-    width: 150px;
-    height: 30px;
-    display: flex;
-    padding: 1px;
+.menu_option{  
+    height: 35px;
+    display: flex;  
     justify-content: center;
-    font-weight: 600;
-    font-size: large;
-    
+    align-content: center;
+    margin: 0 5px;
+   padding: 0 5px;
 }
 
+.menu_option a{
+    text-decoration: none;
+    color:#191919;
+}
 
+.menu_option:hover button{
+    background-color: #b30a0a;
+    border-radius: 12px;
+}
+
+.dropDownMenu:hover{
+    background-color: #b30a0a;
+    border-radius: 12px;
+}
+
+.dropDownMenu{
+    display: inline-block;
+}
+
+.menu_option button{
+    font-weight: 600;
+    font-size: large;  
+    background-color: #D20A0A;
+    color: #191919;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+.dropDownMenu a{
+    font-weight: 600;
+    display: block;
+    color: #191919;
+    text-decoration: none;
+    padding:10px 15px;
+}
+
+.dropDownMenu .dropOptions{
+    display: none;
+    position: absolute;
+    background-color: #b30a0a;
+    min-width: 100px;
+    box-shadow: 1px 1px 5px #191919;
+    border-radius: 12px;
+}
+
+.dropDownMenu:hover .dropOptions{
+    display: block;
+}
+
+.dropOptions a:hover{
+    background-color: #830909;
+    border-radius: 12px;
+}
 
 .main_top{
-    /*border: 2px solid black;*/
     display: flex;
     justify-content: center;
     align-content: center;
-    /*background-color: yellowgreen;*/
     position: relative;
     flex-wrap: wrap ;
 }
-
-
-
 .content{
-
-    /*border: 2px solid red;*/
-    
     display: flex;
-    /*flex-direction: column;*/
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-
-   
 }
-
-
-
 .newpost{
     margin: 10px;
     display: flex;
+    justify-content: center;
     padding: 1.5%;
-   /* border: 2px solid black;*/
     border-radius: 50px;
     box-shadow: 0 0 10px;
     flex-wrap: wrap;
-    /*min-width: 700px;*/
     max-width: 1400px;
     animation:goUp linear;
     animation-timeline: view();
     animation-range: entry 0 cover 30%;
 
 }
-
 
 .post_right{
     margin-left: 20px;
@@ -142,6 +177,11 @@ abbr{
     height: 300px;
     max-width: 300px;
   
+}
+
+.newpost a{
+    font-size:large;
+    color:#D20A0A ;
 }
 
 h3::before{
@@ -174,6 +214,7 @@ h3::before{
     margin-top: 5px;
     margin-bottom: 0px;
     color: aliceblue;
+    text-decoration: none;
 }
 
 @keyframes goUp{
