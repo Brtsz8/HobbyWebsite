@@ -179,12 +179,48 @@ table{
     flex-direction: column;
     height: 300px;
     max-width: 300px;
-  
+}
+
+.post_left label{
+    cursor: zoom-in;
+}
+
+.photoCheck{
+    display: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+input[type=checkbox]:checked ~ label > img
+{
+    transform: scale(1.5);
+    cursor: zoom-out;
+    transition: transform 1s;
 }
 
 .newpost a{
     font-size:large;
     color:#D20A0A ;
+}
+
+.formText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+#formTitle{
+    font-size:xx-large;
+}
+#formDescription{
+    color: #D20A0A;
+    font-size: x-large;
 }
 
 h3::before{
@@ -211,6 +247,10 @@ h3::before{
 
 #secondImg{
     display: none;
+}
+
+#funFact{
+    text-align: center;
 }
 
 #footerText{
@@ -271,6 +311,12 @@ h3::before{
 @media screen and (max-width: 749px) {
     #newpost{
         justify-content: center;
+    }
+    input[type=checkbox]:checked ~ label > img
+    {
+        transform: scale(1.0);
+        cursor: zoom-out;
+        transition: transform 1s;
     }
 
   }
