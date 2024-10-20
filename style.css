@@ -42,6 +42,23 @@ img{
     border-radius: 50px;
 }
 
+aside{
+
+    display:flex;
+    flex-direction: column;
+    
+    width: 400px; 
+    border: 2px solid red;
+}
+
+footer{
+
+    background-color: #191919;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 50px;
+}
+
 .box_top{
     /*border: 1px solid black;*/
     border-radius: 13px;
@@ -106,6 +123,9 @@ img{
     flex-wrap: wrap;
     /*min-width: 700px;*/
     max-width: 1400px;
+    animation:goUp linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
 
 }
 
@@ -130,22 +150,7 @@ h3::before{
     margin-right: 5px;
 }
 
-aside{
 
-    display:flex;
-    flex-direction: column;
-    
-    width: 400px; 
-    border: 2px solid red;
-}
-
-footer{
-
-    background-color: #191919;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 50px;
-}
 
 #firstImgContainer{
     padding-top:10px;
@@ -159,6 +164,18 @@ footer{
 
 #secondImg{
     display: none;
+}
+
+@keyframes goUp{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+
 }
 
 @media screen and (max-width: 1055px) {
@@ -203,7 +220,7 @@ footer{
     }
 
   }
-  @media screen and (max-width: 649px) {
+@media screen and (max-width: 649px) {
     
     h1{
         padding-top: 20px;
