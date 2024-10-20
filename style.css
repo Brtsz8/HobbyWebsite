@@ -59,6 +59,10 @@ footer{
     border-radius: 50px;
 }
 
+abbr{
+    text-decoration: none;
+}
+
 .box_top{
     /*border: 1px solid black;*/
     border-radius: 13px;
