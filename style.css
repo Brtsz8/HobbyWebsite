@@ -57,6 +57,7 @@ footer{
     margin-left: 5%;
     margin-right: 5%;
     border-radius: 50px;
+    text-align: center;
 }
 
 abbr{
@@ -168,6 +169,12 @@ h3::before{
 
 #secondImg{
     display: none;
+}
+
+#footerText{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: aliceblue;
 }
 
 @keyframes goUp{
