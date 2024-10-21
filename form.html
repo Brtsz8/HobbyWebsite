@@ -36,22 +36,47 @@
         <div class="content">
                 <div class="newpost">
                     <form class="form" action="" method="post">
+
                         <label for="name">Name: </label>
                         <input type="text" id="name" required>
                         <label for="surname">Surname: </label>    
                         <input type="text" id="surname" required>
-
+                        <br>
                         <label for="email">E-Mail: </label>    
                         <input type="email" id="email" required>
-
+                        <br>
                         <label for="phone">Phone: </label>    
                         <input type="tel" id="phone" required placeholder="123456789" pattern="[0-9]{9}">
-                        
+                        <br>
                         <label for="birth">Birthday: </label>    
                         <input type="date" id="birth" required>
-
+                        <br>
                         <label for="height">Height (cm): </label>
                         <input type="number" id="height" min="50" max="300" value="170">
+                        <br>
+                        <label for="favTime">Preferred training hours: </label>
+                        <div>  
+                            <input type="radio" id="morning" value="morning" name="favTime">
+                            <label for="morning">morning</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="afternoon" value="afternoon" name="favTime">
+                            <label for="afternoon">afternoon</label>                           
+                        </div>
+                        <div>
+                            <input type="radio" id="evening" value="evening" name="favTime">
+                            <label for="evening">evening</label>
+                        </div>
+                        <br>
+                        <label for="description">Which word describe you best?</label>
+                        <select id="description">
+                            <option value="strong">strong</option>
+                            <option value="fast">fast</option>
+                            <option value="tough">tough</option>
+                            <option value="disciplined">disciplined</option>
+                            <option value="focused">focused</option>
+                        </select>
+                        <br>
 
                         <input type="submit">
                         <input type="reset">

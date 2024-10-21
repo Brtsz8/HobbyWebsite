@@ -194,6 +194,7 @@ table{
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    padding: 15%;
 }
 
 input[type=checkbox]:checked ~ label > img
