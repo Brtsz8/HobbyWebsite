@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myHobby>
+    <combatSports>
+        <sport>Boxing</sport>
+        <sport abbreviation="MMA">Mixed Martial Arts</sport>
+        <sport abbreviation="BJJ">Brazilian Jiu-Jitsu</sport>
+        <sport>Muay Thai</sport>
+        <sport>Wrestling</sport>
+        <sport>Kickboxing</sport>
+        <sport>Judo</sport>
+        <sport>Karate</sport>
+    </combatSports>
+    <organizations>
+        <organization president="Dana White">
+            <name abbreviation="UFC">Ultimate Fighting Championship</name>
+            <disciplines>
+                <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
+            </disciplines> 
+            <founded>1993</founded>
+            <link href="https://www.ufc.com/"/>   
+        </organization>
+        <organization>
+            <name abbreviation="WBA">World Boxing Association</name>
+            <disciplines>
+                <discipline>Boxing</discipline>
+            </disciplines> 
+            <founded>1962</founded>
+            <link href="https://www.wbaboxing.com/"/>   
+        </organization>
+        <organization>
+            <name>ONE Championship</name>
+            <disciplines>
+                <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
+                <discipline>Kickboxing</discipline>
+                <discipline>Muay Thai</discipline>
+            </disciplines> 
+            <founded>2011</founded>   
+            <link href="https://www.onefc.com/"/>
+        </organization>
+        <organization>
+            <name>Karate Combat</name>
+            <disciplines>
+                <discipline style="modern">Karate</discipline>
+            </disciplines> 
+            <founded>2011</founded>   
+        </organization>
+    </organizations>   
+    <fighters>
+        <fighter>
+            <name nickname="Poatan">Alex</name>
+            <lastName>Pereira</lastName>
+            <age>37</age>
+            <from represents="yes">Brazil</from>
+            <competedIn retired="no">
+                <organizations>
+                    <organization>Glory</organization>
+                    <organization abbreviation="UFC">Ultimate Fighting Championship</organization>
+                </organizations>
+                <disciplines>
+                    <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
+                    <discipline>Kickboxing</discipline>
+                </disciplines>
+            </competedIn>
+            <image>
+                <img src="img/AlexP.jpg" alt="AlexPereira" width="300" height="300"/>
+            </image>
+        </fighter>
+        <fighter>
+            <name nickname="JJ">Joanna</name>
+            <lastName>Jędrzejczyk</lastName>
+            <age>37</age>
+            <from represents="yes">Poland</from>
+            <competedIn retired="yes">
+                <organizations>
+                    <organization abbreviation="UFC">Ultimate Fighting Championship</organization>
+                </organizations>
+                <disciplines>
+                    <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
+                    <discipline>Muay Thai</discipline>
+                </disciplines>
+            </competedIn>
+            <image>
+                <img src="img/JoannaJ.png" alt="JoannaJędrzejczyk" width="300" height="300"/>
+            </image>
+        </fighter>
+        <fighter>
+            <name>Craig</name>
+            <lastName>Jones</lastName>
+            <age>33</age>
+            <from represents="yes">Australia</from>
+            <competedIn retired="no">
+                <organizations>
+                    <organization abbreviation="ADCC">Abu Dhabi Combat Club</organization>
+                </organizations>
+                <disciplines>
+                    <discipline abbreviation="BJJ">Brazilian jiu-jitsu</discipline>
+                </disciplines>
+            </competedIn>
+            <image>
+                <img src="img/CraigJ.jpg" alt="CraigJones" width="300" height="300"/>
+            </image>
+        </fighter>
+    </fighters>
+</myHobby>
