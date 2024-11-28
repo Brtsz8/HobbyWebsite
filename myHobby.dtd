@@ -1,0 +1,53 @@
+<!ELEMENT myHobby (combatSports, organizations, fighters, popular)>
+
+<!ELEMENT combatSports (sport+)>
+<!ELEMENT sport (#PCDATA)>
+<!ATTLIST sport
+    abbreviation CDATA #IMPLIED>
+
+<!ELEMENT organizations (organization+)>
+<!ELEMENT organization (name, disciplines?, founded?, link?)>
+<!ATTLIST organization
+    president CDATA #IMPLIED>
+<!ATTLIST organization
+    abbreviation CDATA #IMPLIED>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+    abbreviation CDATA #IMPLIED>
+<!ELEMENT disciplines (discipline+)>
+<!ELEMENT discipline (#PCDATA)>
+<!ATTLIST discipline
+    abbreviation CDATA #IMPLIED
+    style CDATA #IMPLIED>
+<!ELEMENT founded (#PCDATA)>
+<!ELEMENT link EMPTY>
+<!ATTLIST link
+    source CDATA #REQUIRED>
+
+<!ELEMENT fighters (fighter+)>
+<!ELEMENT fighter (firstName, lastName, age, from, competedIn, image)>
+<!ELEMENT firstName (#PCDATA)>
+<!ATTLIST firstName
+    nickname CDATA #IMPLIED>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ATTLIST from
+    represents (Yes | No | Used_to) #REQUIRED>
+<!ELEMENT competedIn (organizations, disciplines)>
+<!ATTLIST competedIn
+    retired (yes | no) #REQUIRED>
+<!ELEMENT image (img)>
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+    source CDATA #REQUIRED
+    alt CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED>
+
+<!ELEMENT popular (popularFighter+, popularGyms+)>
+<!ELEMENT popularFighter (#PCDATA)>
+<!ELEMENT popularGyms (#PCDATA)>
+
+<!ENTITY % organizationElements "name, disciplines, founded, link?">
+<!ENTITY % linkAttributes "source CDATA #REQUIRED">

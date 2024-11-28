@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<myHobby xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:noNamespaceSchemaLocation="data.xsd">
+<!DOCTYPE myHobby SYSTEM "myHobby.dtd">
+<myHobby>
     <combatSports>
         <sport>Boxing</sport>
         <sport abbreviation="MMA">Mixed Martial Arts</sport>
@@ -54,8 +54,8 @@
             <from represents="Yes">Brazil</from>
             <competedIn retired="no">
                 <organizations>
-                    <organization>Glory</organization>
-                    <organization abbreviation="UFC">Ultimate Fighting Championship</organization>
+                    <organization><name>Glory</name></organization>
+                    <organization abbreviation="UFC"><name>Ultimate Fighting Championship</name></organization>
                 </organizations>
                 <disciplines>
                     <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
@@ -70,10 +70,10 @@
             <firstName nickname="JJ">Joanna</firstName>
             <lastName>Jędrzejczyk</lastName>
             <age>37</age>
-            <from represents="Used to">Poland</from>
+            <from represents="Used_to">Poland</from>
             <competedIn retired="yes">
                 <organizations>
-                    <organization abbreviation="UFC">Ultimate Fighting Championship</organization>
+                    <organization abbreviation="UFC"><name>Ultimate Fighting Championship</name></organization>
                 </organizations>
                 <disciplines>
                     <discipline abbreviation="MMA">Mixed Martial Arts</discipline>
@@ -91,7 +91,7 @@
             <from represents="Yes">Australia</from>
             <competedIn retired="no">
                 <organizations>
-                    <organization abbreviation="ADCC">Abu Dhabi Combat Club</organization>
+                    <organization abbreviation="ADCC"><name>Abu Dhabi Combat Club</name></organization>
                 </organizations>
                 <disciplines>
                     <discipline abbreviation="BJJ">Brazilian jiu-jitsu</discipline>

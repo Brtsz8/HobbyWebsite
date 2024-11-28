@@ -85,15 +85,17 @@ table{
     justify-content: center;
     align-content: center;
     margin: 0 5px;
-   padding: 0 5px;
+    padding: 0 5px;
+    display: inline-block;
 }
 
 .menu_option a{
     text-decoration: none;
     color:#191919;
+    
 }
 
-.menu_option:hover button{
+.menu_option:hover {
     background-color: #b30a0a;
     border-radius: 12px;
 }

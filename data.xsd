@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="myHobby" type="myHobbyType"/>  
+
+    <xs:complexType name="myHobbyType">
+        <xs:sequence>
+            <xs:element name="combatSports" type="combatSportsType"/>
+            <xs:element name="organizations" type="organizationsType"/>
+            <xs:element name="fighters" type="fightersType"/>
+			<xs:element name="popular" type="popularType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+	<xs:complexType name="popularType">
+		<xs:sequence>
+			<xs:element name="popularFighter" maxOccurs="5" minOccurs="1" type="fightersListType"/>
+			<xs:element name="popularGyms" maxOccurs="5" minOccurs="1" type="gymUnionType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="combatSportsType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="sport" >
+            <xs:complexType>
+                <xs:simpleContent>
+                <xs:extension base="CombatSportTypeName">
+                    <xs:attribute name="abbreviation" type="AbbreviationType" use="optional" />
+                </xs:extension>
+                </xs:simpleContent>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>    
+    </xs:complexType>
+
+    <xs:complexType name="organizationsType">
+		<xs:sequence>
+			<xs:element name="organization" type="organizationType" maxOccurs="unbounded"/>
+		</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="fightersType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="fighter">
+			<xs:complexType>
+				<xs:sequence>
+				<xs:group ref="fighterInfo"/>
+				<xs:element ref="from"/>
+				<xs:element name="competedIn">
+					<xs:complexType>
+					<xs:sequence>
+						<xs:element name="organizations" >
+						<xs:complexType>
+							<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="organization">
+								<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+									<xs:attribute name="abbreviation" type="AbbreviationType" use="optional" />
+									</xs:extension>
+								</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+						</xs:element>
+						<xs:element name="disciplines">
+						<xs:complexType>
+							<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="discipline">
+								<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+									<xs:attribute name="abbreviation" type="AbbreviationType" use="optional" />
+									</xs:extension>
+								</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="retired" type="RetirementStatus" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="image" type="imageType"/>
+				</xs:sequence>
+			</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+    </xs:complexType>
+
+	<xs:group name="fighterInfo">
+		<xs:sequence>
+			<xs:element name="firstName">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="nickname" type="xs:string" use="optional" />
+						</xs:extension>
+					</xs:simpleContent>
+                </xs:complexType>
+			</xs:element>
+			<xs:element name="lastName">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="age" type="AgeType"/>
+		</xs:sequence>
+  	</xs:group>
+
+	<xs:complexType name="imageType">
+		<xs:sequence>
+          	<xs:element name="img">
+        	    <xs:complexType>
+                    <xs:attribute name="source" type="xs:string" use="required" />
+                    <xs:attribute name="alt">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+                    <xs:attribute name="width">
+						<xs:simpleType>
+							<xs:restriction base="xs:unsignedShort">
+								<xs:minInclusive value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+                    <xs:attribute name="height">
+						<xs:simpleType>
+							<xs:restriction base="xs:unsignedShort">
+								<xs:minInclusive value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+                  </xs:complexType>
+                </xs:element>
+        </xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="organizationType">
+         <xs:sequence>
+			<xs:element name="name">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="abbreviation" type="AbbreviationType" use="optional" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="disciplines">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="discipline" type="disciplineType"/>		
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="founded" type="YearType" />
+			<xs:element minOccurs="0" name="link" type="linkType"/>
+		</xs:sequence>
+		<xs:attribute name="president" type="xs:string" use="optional" />
+    </xs:complexType>
+
+ 	<xs:complexType name="disciplineType">
+    	<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="abbreviation" type="AbbreviationType" use="optional" />
+				<xs:attribute name="style" type="StyleType" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+    </xs:complexType>
+	
+  	<xs:element name="from">
+      <xs:complexType>
+          <xs:simpleContent>
+              <xs:extension base="xs:string">
+                  <xs:attribute ref="represents" use="required"/>  
+              </xs:extension>
+          </xs:simpleContent>
+      </xs:complexType>
+    </xs:element>
+	<xs:complexType name="linkType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="source" use="required"/>  
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	
+	<xs:attribute name="represents">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Yes"/>
+				<xs:enumeration value="No"/>
+				<xs:enumeration value="Used to"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	
+
+	<xs:attribute name="source">
+		<xs:simpleType>
+			<xs:restriction base="xs:anyURI"/>
+		</xs:simpleType>
+	</xs:attribute>
+
+	
+	<xs:simpleType name="AbbreviationType">
+    	<xs:restriction base="xs:string">
+    	  	<xs:pattern value="[A-Za-z]+"/>
+			<xs:minLength value="1"/>
+            <xs:maxLength value="10"/>
+ 	    </xs:restriction>
+  	</xs:simpleType>
+
+	<xs:simpleType name="StyleType">
+		<xs:restriction base="xs:string">
+    	  	<xs:pattern value="[A-Za-z]+"/>
+            <xs:maxLength value="10"/>
+ 	    </xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CombatSportTypeName">
+    	<xs:restriction base="xs:string">
+     	   <xs:pattern value="[A-Za-z]+( [A-Za-z]+)*"/>
+     	   <xs:maxLength value="100"/>
+   		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="YearType">
+  		<xs:restriction base="xs:gYear">
+  		    <xs:minExclusive value="1899"/>
+   		</xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="RetirementStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+		</xs:restriction>
+ 	</xs:simpleType>
+
+	<xs:simpleType name="AgeType">
+		<xs:restriction base="xs:unsignedInt">
+			<xs:minExclusive value="17"/>
+			<xs:maxExclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="fightersListType">
+    	<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="gymUnionType">
+        <xs:union memberTypes="xs:string xs:anyURI"/>
+    </xs:simpleType>
+
+</xs:schema>
